@@ -14,3 +14,16 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+# 👋 Hi, I'm Sai Ram Potlapalli
+**Aspiring Data Scientist | Python | SQL | Statistics | Machine Learning**
+
+### 📬 Contact Me
+- 📧 Email: potlpallisairam[at]gmail[dot]com
+- 💼 [LinkedIn](https://linkedin.com/in/yourprofile)
+
+
+### 🛠️ Skills
+
+`Python (NumPy, Pandas, Matplotlib, Seaborn, Statsmodels, SciPy)` `SQL (PostgreSQL, Oracle, MySQL)` `C++` `PL/SQL` `Shell Scripting`
+`Tableau` `Snowflake` `Control-M` `Oracle-EBS` `GitHub` `JIRA` `ServiceNow`
+
