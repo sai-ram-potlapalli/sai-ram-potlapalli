@@ -20,6 +20,8 @@ Here are some ideas to get you started:
 ### 📬 Contact Me
 - 📧 Email: potlpallisairam[at]gmail[dot]com
 - 💼 [LinkedIn](https://linkedin.com/in/sai-ram-potlapalli)
+- [📊 View my Tableau Visualizations](https://public.tableau.com/app/profile/sai.ram.potlapalli)
+
 
 
 ### 🛠️ Skills
