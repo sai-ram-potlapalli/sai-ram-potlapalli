@@ -15,7 +15,7 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 # 👋 Hi, I'm Sai Ram Potlapalli
-**Aspiring Data Scientist | Python | SQL | Statistics | Machine Learning**
+**Aspiring Data Scientist | Python | SQL | Statistics | Machine Learning | Tableau **
 
 ### 📬 Contact Me
 - 📧 Email: potlpallisairam[at]gmail[dot]com
