@@ -28,6 +28,7 @@ GitHub, JIRA, ServiceNow
 - Performed EDA, hypothesis testing, and trained models on structured and unstructured data
 - Tools: Python, Scikit-learn, Pandas, Seaborn
 - 📁 [GitHub Repository](https://github.com/sai-ram-potlapalli/Data-science-Donor-Choose)
+  
 ---
 
 #### 🧾 Customer Support Ticket Classification and Routing
@@ -42,6 +43,7 @@ GitHub, JIRA, ServiceNow
 ###  Currently Working On
 - End-to-end ML pipelines and real-world analytics projects
 - Enhancing model deployment skills and contributing to open-source
+  
 ---
 _Thanks for visiting! ⭐_
 
