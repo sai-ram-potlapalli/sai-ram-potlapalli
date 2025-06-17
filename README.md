@@ -1,5 +1,3 @@
-## Hi there 👋
-
 <!--
 **sai-ram-potlapalli/sai-ram-potlapalli** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
