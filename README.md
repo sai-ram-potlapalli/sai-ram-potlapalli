@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Data+Scientist+%26+ML+Engineer;Python+%7C+SQL+%7C+Machine+Learning;Turning+Data+into+Insights)](https://git.io/typing-svg)
+  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Data+&+Advanced+Analytics;Processing+&+Turning+Data+into+Insights)](https://git.io/typing-svg)
   
   <img src="https://komarev.com/ghpvc/?username=sai-ram-potlapalli&color=blueviolet" alt="Profile views" />
   
