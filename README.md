@@ -16,9 +16,9 @@
 class DataScientist:
     def __init__(self):
         self.name = "Sai Ram Potlapalli"
-        self.role = "Data Scientist & ML Engineer"
+        self.role = "Data & Advanced Analytics"
         self.languages = ["Python", "SQL", "C++", "Shell"]
-        self.specialties = ["Machine Learning", "NLP", "Data Visualization"]
+        self.specialties = ["Data Visualization", "Statistics", "ETL Pipelines"]
         self.current_focus = "End-to-end ML pipelines"
     
     def say_hi(self):
@@ -67,22 +67,6 @@ me.say_hi()
 ![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white)
 
 </div>
-
----
-
-## 📊 GitHub Stats
-
-<div align="center">
-  
-  <img src="https://github-readme-stats.vercel.app/api?username=sai-ram-potlapalli&show_icons=true&theme=radical" alt="GitHub Stats" />
-  
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=sai-ram-potlapalli&theme=radical" alt="GitHub Streak" />
-  
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sai-ram-potlapalli&layout=compact&theme=radical" alt="Top Languages" />
-  
-</div>
-
----
 
 ## 🎯 Featured Projects
 
@@ -141,33 +125,9 @@ me.say_hi()
 
 ---
 
-## 📈 Activity Graph
-
 <div align="center">
   
-  [![Sai Ram's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=sai-ram-potlapalli&theme=react-dark)](https://github.com/ashutosh00710/github-readme-activity-graph)
-  
-</div>
-
----
-
-## 🏆 Achievements
-
-<div align="center">
-  
-  [![trophy](https://github-profile-trophy.vercel.app/?username=sai-ram-potlapalli&theme=radical&no-frame=false&no-bg=false&margin-w=4)](https://github.com/ryo-ma/github-profile-trophy)
-  
-</div>
-
----
-
-<div align="center">
-  
-  ### 💭 *"Data is the new oil, but insights are the refined fuel that drives innovation"*
-  
-  <img src="https://raw.githubusercontent.com/platane/snk/output/github-contribution-grid-snake-dark.svg" alt="Snake eating contributions" />
-  
-  **Thanks for visiting! ⭐ Star my repos if you find them interesting!**
+  **Thanks for visiting!**
   
 </div>
 
