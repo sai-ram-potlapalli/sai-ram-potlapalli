@@ -2,7 +2,7 @@
 
 <div align="center">
   
-  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Data+&+Advanced+Analytics;Processing+&+Turning+Data+into+Insights)](https://git.io/typing-svg)
+  [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9EF7&center=true&vCenter=true&width=435&lines=Data+%26+Advanced+Analytics;Processing+%26+Turning+Data+into+Insights)](https://git.io/typing-svg) 
   
   <img src="https://komarev.com/ghpvc/?username=sai-ram-potlapalli&color=blueviolet" alt="Profile views" />
   
@@ -13,18 +13,18 @@
 ## 🚀 About Me
 
 ```python
-class DataScientist:
+class Data_Advanced_Analytics:
     def __init__(self):
         self.name = "Sai Ram Potlapalli"
         self.role = "Data & Advanced Analytics"
         self.languages = ["Python", "SQL", "C++", "Shell"]
-        self.specialties = ["Data Visualization", "Statistics", "ETL Pipelines"]
+        self.specialties = ["Data Analysis", "EDA", "Feature Engineering","Data Engineering ", "Data Visualization", "Statistics", "ETL Pipelines"]
         self.current_focus = "End-to-end ML pipelines"
     
     def say_hi(self):
-        print("Thanks for dropping by! Let's turn data into insights together 🚀")
+        print("Thanks for dropping by! ")
 
-me = DataScientist()
+me = Data_Advanced_Analytics()
 me.say_hi()
 ```
 
