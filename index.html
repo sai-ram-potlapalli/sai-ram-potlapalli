@@ -15,8 +15,9 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #a8e6cf 0%, #FADA7A 50%, #81BFDA 100%);
-            color: #333;
+            color: #4e4e4e; /* Light Gray for text */
             overflow-x: hidden;
+        }
         }
 
         .container {
@@ -52,7 +53,7 @@
         .header {
             text-align: center;
             padding: 60px 0;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05); /* Very Light Beige */
             backdrop-filter: blur(10px);
             margin-bottom: 40px;
             border-radius: 20px;
@@ -130,16 +131,17 @@
             flex-wrap: wrap;
         }
 
-        .contact-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.contact-card {
+    background: rgba(255, 255, 255, 0.1); /* Light Beige */
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 
         .contact-card:hover {
             transform: translateY(-10px) scale(1.05);
@@ -160,14 +162,14 @@
         }
 
         /* Skills Section */
-        .skills-section {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 40px;
-            border-radius: 20px;
-            margin: 40px 0;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
+.skills-section {
+    background: rgba(255, 255, 255, 0.05); /* Very Light Beige */
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
 
         .skills-section h2 {
             color: white;
@@ -207,14 +209,14 @@
             gap: 8px;
         }
 
-        .skill-tag {
-            background: linear-gradient(45deg, #7fb069, #52b788);
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease;
-        }
+.skill-tag {
+    background: linear-gradient(45deg, #7fb069, #52b788);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
 
         .skill-tag:hover {
             transform: scale(1.1);
@@ -226,10 +228,10 @@
         }
 
         .projects-section h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
+           color: #7fb069; /* Green */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
         }
 
         .project-card {
@@ -282,7 +284,7 @@
         }
 
         .project-description {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.7); /* Soft Light Gray */
             font-style: italic;
             margin-bottom: 20px;
             font-size: 1.1rem;
@@ -309,17 +311,15 @@
             font-size: 0.9rem;
         }
 
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(45deg, #7fb069, #52b788);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
+.project-link {
+    background: linear-gradient(45deg, #7fb069, #52b788);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
 
         .project-link:hover {
             transform: scale(1.05);
@@ -347,10 +347,10 @@
         }
 
         .experience-section h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            text-align: center;
+color: #7fb069; /* Green */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
         }
 
         .experience-card {
@@ -420,7 +420,7 @@
         }
 
         .experience-description {
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
             margin-bottom: 15px;
         }
@@ -438,7 +438,7 @@
         }
 
         .experience-achievements li::before {
-            content: '✅';
+            content: '-->';
             position: absolute;
             left: 0;
             top: 0;
@@ -460,14 +460,15 @@
         }
 
         .current-work h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+    color: #7fb069; /* Green */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
         }
 
         .current-work ul {
             list-style: none;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.2rem;
             line-height: 1.8;
         }
@@ -486,12 +487,12 @@
         }
 
         /* Footer */
-        .footer {
-            text-align: center;
-            padding: 40px 0;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1.5rem;
-        }
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+}
 
         /* Responsive */
         @media (max-width: 768px) {
