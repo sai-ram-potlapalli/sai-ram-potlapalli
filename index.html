@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Ram Potlapalli - Data & Advanced Analytics</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,13 +14,15 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0d0d0d 100%);
-            color: #e0e0e0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            color: #ffffff;
             overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
         }
 
-        /* Animated Background */
+        /* Enhanced Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -30,36 +33,60 @@
             overflow: hidden;
         }
 
-        .floating-shape {
+        .bg-animation::before {
+            content: '';
             position: absolute;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.3) 0%, transparent 50%);
+            animation: gradientShift 8s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            50% { opacity: 0.8; transform: scale(1.1) rotate(180deg); }
+        }
+
+        /* Floating particles */
+        .floating-particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: floatParticle 15s linear infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px) rotate(360deg); opacity: 0; }
         }
 
         /* Main Layout */
         .main-container {
             display: grid;
-            grid-template-columns: 350px 1fr;
+            grid-template-columns: 380px 1fr;
             min-height: 100vh;
             gap: 0;
+            backdrop-filter: blur(20px);
         }
 
-        /* Left Sidebar */
+        /* Enhanced Left Sidebar */
         .sidebar {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(20px);
-            padding: 2rem;
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(30px);
+            padding: 2.5rem;
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
             position: sticky;
             top: 0;
             height: 100vh;
             overflow-y: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar::-webkit-scrollbar {
@@ -68,35 +95,53 @@
 
         .sidebar::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background: rgba(64, 224, 208, 0.3);
             border-radius: 3px;
         }
 
-        /* Profile Section */
+        .sidebar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+            border-radius: 3px;
+        }
+
+        /* Enhanced Profile Section */
         .profile {
             text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #333, #555);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 50px;
+            margin: 0 auto 1.5rem;
+            font-size: 60px;
             color: #fff;
-            animation: pulse 2s infinite;
-            border: 3px solid rgba(64, 224, 208, 0.3);
+            animation: profilePulse 3s ease-in-out infinite;
+            border: 2px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
+            position: relative;
+        }
+
+        .profile-img::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 2s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .profile-img img {
@@ -104,105 +149,147 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
+            position: relative;
+            z-index: 2;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        @keyframes profilePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 255, 255, 0.2); }
+            50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 255, 255, 0.4); }
         }
 
         .profile h1 {
-            font-size: 1.8rem;
-            background: linear-gradient(45deg, #ffffff, #40E0D0);
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff, #f093fb, #764ba2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            background-clip: text;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.02em;
         }
 
         .profile .subtitle {
-            color: #40E0D0;
-            font-size: 1rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .profile .bio {
-            color: #b0b0b0;
-            font-size: 0.9rem;
-            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        /* Navigation */
+        /* Enhanced Navigation */
         .nav-menu {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .nav-item {
-            display: block;
-            padding: 0.8rem 1rem;
-            color: #b0b0b0;
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
-            border-radius: 10px;
-            margin-bottom: 0.5rem;
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            margin-bottom: 0.8rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
         }
 
         .nav-item:hover, .nav-item.active {
-            background: rgba(64, 224, 208, 0.1);
-            color: #40E0D0;
-            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .nav-item i {
-            margin-right: 0.8rem;
-            width: 16px;
+            margin-right: 1rem;
+            width: 18px;
+            font-size: 1.1rem;
         }
 
-        /* Contact Info */
+        /* Enhanced Contact Info */
         .contact-info {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 2rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            padding: 0.5rem 0;
-            color: #b0b0b0;
-            font-size: 0.9rem;
+            padding: 0.8rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            padding-left: 1rem;
         }
 
         .contact-item i {
-            margin-right: 0.8rem;
-            color: #40E0D0;
-            width: 16px;
+            margin-right: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            width: 18px;
+            font-size: 1.1rem;
         }
 
         .contact-item a {
-            color: #b0b0b0;
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .contact-item a:hover {
-            color: #40E0D0;
+            color: #ffffff;
         }
 
-        /* Main Content */
+        /* Enhanced Main Content */
         .main-content {
-            padding: 2rem;
+            padding: 3rem;
             overflow-y: auto;
+            background: rgba(255, 255, 255, 0.02);
         }
 
-        /* Section Styles */
+        /* Enhanced Section Styles */
         .section {
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.6s ease forwards;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
         }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
 
         @keyframes fadeInUp {
             to {
@@ -213,10 +300,12 @@
 
         .section h2 {
             color: #ffffff;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
             position: relative;
-            padding-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            letter-spacing: -0.02em;
         }
 
         .section h2::after {
@@ -224,23 +313,24 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(45deg, #40E0D0, #FF6B6B);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #f093fb, #f5576c, #4facfe);
             border-radius: 2px;
         }
 
-        /* Cards */
+        /* Enhanced Cards */
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-radius: 15px;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 2.5rem;
+            border-radius: 24px;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .card::before {
@@ -251,7 +341,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            transition: left 0.5s;
+            transition: left 0.6s;
         }
 
         .card:hover::before {
@@ -259,217 +349,219 @@
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(64, 224, 208, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.12);
         }
 
-        /* Experience Cards */
+        /* Enhanced Experience Cards */
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
 
         .experience-title h3 {
             color: #ffffff;
-            font-size: 1.3rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
         }
 
         .experience-title .company {
-            color: #FF6B6B;
-            font-size: 1rem;
+            color: #f093fb;
+            font-size: 1.1rem;
             font-weight: 600;
         }
 
         .duration {
-            background: rgba(64, 224, 208, 0.1);
-            color: #40E0D0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
             white-space: nowrap;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .description {
-            color: #b0b0b0;
-            line-height: 1.6;
-            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
             font-style: italic;
+            font-size: 1rem;
         }
 
         .achievements {
             list-style: none;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .achievements li {
-            color: #d0d0d0;
-            margin-bottom: 0.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.8rem;
             position: relative;
-            padding-left: 1.5rem;
-            line-height: 1.4;
+            padding-left: 2rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
         }
 
         .achievements li::before {
             content: '▸';
             position: absolute;
             left: 0;
-            color: #40E0D0;
+            color: #4facfe;
+            font-size: 1.2rem;
+            top: -2px;
         }
 
-        /* Skills Grid */
+        /* Enhanced Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
         .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
         }
 
         .skill-category:hover {
-            transform: translateY(-3px);
-            border: 1px solid rgba(64, 224, 208, 0.2);
+            transform: translateY(-5px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
         .skill-category h3 {
-            color: #40E0D0;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+            color: #ffffff;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3 i {
+            margin-right: 0.8rem;
+            color: #f093fb;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.8rem;
         }
 
         .skill-tag, .tech-tag, .tool-tag {
-            background: rgba(255, 255, 255, 0.1);
-            color: #e0e0e0;
-            padding: 0.3rem 0.8rem;
-            border-radius: 12px;
-            font-size: 0.8rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.2s ease;
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .skill-tag:hover, .tech-tag:hover, .tool-tag:hover {
             transform: scale(1.05);
-            border: 1px solid rgba(64, 224, 208, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.18);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Education Cards */
+        /* Enhanced Education Cards */
         .education-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
         }
 
         .degree {
             color: #ffffff;
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
         }
 
         .institution {
-            color: #FF6B6B;
-            font-size: 1rem;
+            color: #f093fb;
+            font-size: 1.05rem;
+            font-weight: 500;
         }
 
         .gpa {
-            color: #40E0D0;
+            color: #4facfe;
             font-weight: 600;
         }
 
-        /* Awards Grid */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-        }
-
-        .award-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 1.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .award-card:hover {
-            transform: translateY(-5px);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
-        }
-
-        .award-icon {
-            font-size: 2.5rem;
-            color: #FFD700;
-            margin-bottom: 1rem;
-        }
-
-        .award-title {
-            color: #ffffff;
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-org {
-            color: #FF6B6B;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .award-year {
-            color: #40E0D0;
-            font-size: 0.8rem;
-        }
-
-        /* Project Cards */
+        /* Enhanced Project Cards */
         .project-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .project-header i {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            color: #FF6B6B;
+            font-size: 1.8rem;
+            margin-right: 1.2rem;
+            color: #f5576c;
         }
 
         .project-header h3 {
             color: #ffffff;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         .project-link {
-            background: linear-gradient(45deg, #333, #555);
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
             color: #ffffff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 20px;
+            padding: 1rem 2rem;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            margin-top: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .project-link i {
+            margin-right: 0.8rem;
         }
 
         .project-link:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         /* Responsive Design */
@@ -482,6 +574,10 @@
                 position: relative;
                 height: auto;
             }
+            
+            .main-content {
+                padding: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -489,17 +585,21 @@
                 grid-template-columns: 1fr;
             }
             
-            .awards-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .experience-header {
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 1rem;
             }
             
             .duration {
                 align-self: flex-start;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 2rem;
             }
         }
 
@@ -514,11 +614,57 @@
 
         .main-content::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
         }
 
         .main-content::-webkit-scrollbar-thumb {
-            background: rgba(64, 224, 208, 0.3);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
             border-radius: 4px;
+        }
+
+        /* Enhanced award cards */
+        .award-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-align: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(15px);
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.1);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .award-icon {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .award-title {
+            color: #ffffff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .award-org {
+            color: #f093fb;
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+        }
+
+        .award-year {
+            color: #4facfe;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
     </style>
 </head>
@@ -659,220 +805,4 @@
 
             <!-- Education Section -->
             <section id="education" class="section">
-                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
-                
-                <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">Master of Science in Computer Science</div>
-                            <div class="institution">Auburn University at Montgomery, AL, USA</div>
-                        </div>
-                        <div class="duration">Aug 2023 - May 2025</div>
-                    </div>
-                    <p class="description">
-                        Advanced coursework in Database Systems, Machine Learning, and Data Analysis with focus on real-world applications in business and research contexts.
-                    </p>
-                    <div class="skill-tags">
-                        <span class="tech-tag">Advanced Database Systems</span>
-                        <span class="tech-tag">Machine Learning</span>
-                        <span class="tech-tag">Data Analytics</span>
-                        <span class="tech-tag">Advanced Programming</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">Bachelor of Technology in Computer Science</div>
-                            <div class="institution">Anurag Engineering College, TS, India</div>
-                        </div>
-                        <div class="duration">2015 - 2019</div>
-                    </div>
-                    <p class="description">
-                        Comprehensive foundation in engineering principles, mathematics, and problem-solving methodologies. Strong background in Database Systems, Big Data Analytics.
-                    </p>
-                    <div class="skill-tags">
-                        <span class="tech-tag">Programming</span>
-                        <span class="tech-tag">Mathematics</span>
-                        <span class="tech-tag">Engineering Principles</span>
-                        <span class="tech-tag">Problem Solving</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Skills Section -->
-            <section id="skills" class="section">
-                <h2><i class="fas fa-tools"></i> Skills & Technologies</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3><i class="fab fa-python"></i> Programming Languages</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">PL/SQL</span>
-                            <span class="skill-tag">R</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Shell Scripting</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-brain"></i> Data Science & ML</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                            <span class="skill-tag">Statsmodels</span>
-                            <span class="skill-tag">SciPy</span>
-                            <span class="skill-tag">TensorFlow</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-chart-line"></i> Visualization & BI</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Tableau</span>
-                            <span class="skill-tag">Matplotlib</span>
-                            <span class="skill-tag">Seaborn</span>
-                            <span class="skill-tag">Plotly</span>
-                            <span class="skill-tag">Power BI</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><i class="fas fa-database"></i> Databases & Cloud</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">Oracle</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">Snowflake</span>
-                            <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Azure</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects Section -->
-            <section id="projects" class="section">
-                <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
-                
-                <div class="card">
-                    <div class="project-header">
-                        <i class="fas fa-heart"></i>
-                        <h3>DonorsChoose Project Approval Prediction</h3>
-                    </div>
-                    <p class="description">Used NLP and ML to streamline project proposal approval for DonorsChoose.org</p>
-                    <ul class="achievements">
-                        <li>Built a predictive pipeline to identify classroom project approval likelihood based on metadata and essay content</li>
-                        <li>Performed comprehensive EDA, hypothesis testing, and trained models on structured and unstructured data</li>
-                        <li>Achieved 85% accuracy in predicting project approval outcomes using ensemble methods</li>
-                        <li>Implemented feature engineering techniques for text data preprocessing and analysis</li>
-                    </ul>
-                    <div class="skill-tags">
-                        <span class="tool-tag">Python</span>
-                        <span class="tool-tag">Scikit-learn</span>
-                        <span class="tool-tag">NLP</span>
-                        <span class="tool-tag">Pandas</span>
-                        <span class="tool-tag">Seaborn</span>
-                    </div>
-                    <a href="https://github.com/sai-ram-potlapalli/Data-science-Donor-Choose" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-
-                <div class="card">
-                    <div class="project-header">
-                        <i class="fas fa-ticket-alt"></i>
-                        <h3>Customer Support Ticket Classification</h3>
-                    </div>
-                    <p class="description">Optimized ticket handling for retail helpdesk using NLP-based classifiers</p>
-                    <ul class="achievements">
-                        <li>Built an automated tagging and routing model using issue descriptions and customer data</li>
-                        <li>Created comprehensive KPI dashboards to track performance improvements and system metrics</li>
-                        <li>Reduced manual ticket routing time by 75% and improved customer satisfaction scores</li>
-                        <li>Implemented real-time monitoring and alerting for model performance degradation</li>
-                    </ul>
-                    <div class="skill-tags">
-                        <span class="tool-tag">Python</span>
-                        <span class="tool-tag">TfidfVectorizer</span>
-                        <span class="tool-tag">Tableau</span>
-                        <span class="tool-tag">NLP</span>
-                        <span class="tool-tag">Classification</span>
-                    </div>
-                    <a href="https://github.com/sai-ram-potlapalli/Data-science-Donor-Choose" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-            </section>
-         <!-- Awards Section -->
-        <section id="awards" class="section">
-                <h2><i class="fas fa-award"></i> Awards</h2>
-            
-                <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">AUM Scholar</div>
-                            <div class="institution">Auburn University at Montgomery, AL, USA</div>
-                        </div>
-                        <div class="duration">2024-2025</div>
-                    </div>
-                    <p class="description">
-                        Awarded the AUM Alumni Graduate Merit Scholarship and designated as an AUM Scholar in recognition of academic excellence and distinguished scholarly achievement.
-                    </p>
-                    <a href="https://www.aum.edu/scholarship/aum-alumni-association-graduate-merit-scholarships/#1683576859978-889db2d0-1c50">
-                    <i class="fab fa-award"></i> View on AUM Portal
-                    </a>
-                </div>
-            
-                <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">Perpetual Positivity Award</div>
-                            <div class="institution">Auburn University at Montgomery, AL, USA</div>
-                        </div>
-                        <div class="duration">May 2024</div>
-                    </div>
-                    <p class="description">
-                        Recognized with Perpetual Positivity Award for maintaining exceptional morale and fostering a constructive work environment.
-                    </p>
-
-                </div>
-            
-                <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">People's Choice Award</div>
-                            <div class="institution">Auburn University at Montgomery, AL, USA</div>
-                        </div>
-                        <div class="duration">May 2024</div>
-                    </div>
-                    <p class="description">
-                        Recipient of People's Choice Award, recognizing peer-nominated excellence and collaborative leadership.
-                    </p>
-                </div>
-
-            <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">INSTA Award</div>
-                            <div class="institution">Infosys Ltd. Hyderbad, India</div>
-                        </div>
-                        <div class="duration"></div>
-                    </div>
-                    <p class="description">
-                        Recognized for rapid acquisition of Oracle Enterprise Intelligence Suite (EIS) technology and successful integration into enterprise applications to generate complex business reporting solutions. 
-                    </p>
-                </div>
-            
-             <div class="card">
-                    <div class="education-header">
-                        <div>
-                            <div class="degree">Certificate of Merit & Dr. Raghav Reddy Memorial Prize</div>
-                            <div class="institution">Anurag Engineering College</div>
-                        </div>
-                        <div class="duration">2015-2019</div>
-                    </div>
-                    <p class="description">
-                        Awarded College Topper distinction for academic excellence and recognized for distinguished scholarly achievement throughout undergraduate studies.
-                    </p>
-                   
-                </div>
-            </section>
+                <h2><i class="fas fa-graduation
