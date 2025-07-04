@@ -237,7 +237,7 @@
             font-weight: 500;
         }
 
-        .experience-item, .education-item, .project-item, .award-item {
+        .experience-item,.leadership-experience-item ,.education-item, .project-item, .award-item {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #333;
             border-radius: 12px;
@@ -246,7 +246,7 @@
             transition: all 0.3s ease;
         }
 
-        .experience-item:hover, .education-item:hover, .project-item:hover, .award-item:hover {
+        .experience-item:hover,.leadership-experience-item , .education-item:hover, .project-item:hover, .award-item:hover {
             border-color: #667eea;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
         }
@@ -399,7 +399,7 @@
             margin-bottom: 15px;
         }
 
-        .experience-item, .education-item, .project-item, .award-item, .award-card {
+        .experience-item, .leadership-experience-item, .education-item, .project-item, .award-item, .award-card {
             width: 100%;
             box-sizing: border-box;
         }
@@ -673,7 +673,37 @@
                     </div>
                     
                 </div>
-
+             <!-- Leadership Experience Tab -->
+             <div id="leadership-experience" class="tab-content">
+                    <h2 class="section-title">Leadership Experience</h2>
+                    
+                    <div class="experience-item">
+                        <h3 class="job-title">Residence Life Coordinator</h3>
+                        <p class="company">Auburn University at Montgomery</p>
+                        <p class="duration">May 2024 - May 2025</p>
+                        <p class="description">
+                            Led data-driven initiatives to optimize business processes and support strategic decision-making by migrating data from legacy systems, transforming raw data into actionable insights through advanced analytics.
+                        </p>
+                        <ul class="achievements">
+                            <li>Designed and optimized data pipelines using Python, SQL, PL/SQL, and Shell scripting to ingest and transform logistics and contract data from multiple global systems</li>
+                            <li>Developed Tableau dashboards for procurement and operations teams, reducing manual reporting by 30% and enhancing executive-level visibility into supply chain KPIs</li>
+                            <li>Led the migration of 24 agreement-driven data integrations, transforming and mapping data across 10 production tables, and eliminating redundant fields in 6+ tables to align with new architectural standards</li>
+                            <li>Applied statistical methods (time series forecasting, regression analysis) using Python libraries such as statsmodels and SciPy to predict contract renewals and pricing trends</li>
+                            <li>Collaborated with data engineers and stakeholders to standardize reporting workflows, reducing ad-hoc requests by 25% and enhancing reporting efficiency</li>
+                            <li>Performed exploratory data analysis (EDA) on operational datasets to uncover inefficiencies, driving data-informed decisions and improving SLA adherence by 20%</li>
+                            <li>Developed complex PL/SQL packages, procedures, and functions to support ETL workflows across Dev, Test, Pre-Prod, and Prod environments</li>
+                        </ul>
+                        <div class="skill-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">PL/SQL</span>
+                            <span class="tech-tag">Tableau</span>
+                            <span class="tech-tag">Statistical Analysis</span>
+                            <span class="tech-tag">ETL</span>
+                            <span class="tech-tag">Data Wrangling</span>
+                        </div>
+                    </div>
+             </div>
                 <!-- Education Tab -->
                 <div id="education" class="tab-content">
                     <h2 class="section-title">Education</h2>
